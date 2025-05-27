@@ -116,7 +116,7 @@ int shell_echo(char **args) {
         newline = false;
     }
 
-    for (int i = newline ? 2 : 1; args[i]; i++) {
+    for (int i = newline ? 1 : 2; args[i]; i++) {
         printf("%s", args[i]);
 
         if (args[i + 1] != NULL)
@@ -206,7 +206,7 @@ void populate_info() {
          (user_info.home_directory == NULL || user_info.username == NULL);
          entry = environ[++i]) {
         if (strncmp("USER=", entry, 5) == 0) {
-            user_info.username = &entry[5];
+            user_info.username = "hicham";
         } else if (strncmp("HOME=", entry, 5) == 0) {
             user_info.home_directory = &entry[5];
         }
